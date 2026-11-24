@@ -194,10 +194,19 @@ Códigos de saída, úteis em scripts e pipelines de CI:
 ## Uso como biblioteca
 
 ```python
-from nfe_toolkit import validar, decompor, calcular_dv, formatar, ler_nota, planejar, aplicar, conciliar
+from nfe_toolkit import (
+    validar,
+    decompor,
+    calcular_dv,
+    formatar,
+    ler_nota,
+    planejar,
+    aplicar,
+    conciliar,
+)
 
-validar("35260311222333000181550010000012011000012012")      # True
-calcular_dv("3526031122233300018155001000001201100001201")   # 2
+validar("35260311222333000181550010000012011000012012")  # True
+calcular_dv("3526031122233300018155001000001201100001201")  # 2
 
 info = decompor("35260311222333000181550010000012011000012012")
 info.uf, info.ano, info.mes, info.modelo_descricao, info.emitente_formatado
@@ -206,8 +215,8 @@ info.uf, info.ano, info.mes, info.modelo_descricao, info.emitente_formatado
 nota = ler_nota("inbox/NF-1202.xml")
 nota.chave, nota.emitente_nome, nota.valor_total, nota.autorizada
 
-plano = planejar("inbox", "organized")      # só lê, devolve um Plano
-resultado = aplicar(plano, copiar=True)     # copia; nunca sobrescreve
+plano = planejar("inbox", "organized")  # só lê, devolve um Plano
+resultado = aplicar(plano, copiar=True)  # copia; nunca sobrescreve
 
 r = conciliar("inbox", "expected-keys.txt")
 r.faltando, r.sobrando, r.duplicadas, r.invalidas, r.ok

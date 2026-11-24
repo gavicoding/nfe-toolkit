@@ -212,10 +212,19 @@ Exit codes, handy in scripts and CI jobs:
 ## Use as a library
 
 ```python
-from nfe_toolkit import validar, decompor, calcular_dv, formatar, ler_nota, planejar, aplicar, conciliar
+from nfe_toolkit import (
+    validar,
+    decompor,
+    calcular_dv,
+    formatar,
+    ler_nota,
+    planejar,
+    aplicar,
+    conciliar,
+)
 
-validar("35260311222333000181550010000012011000012012")      # True
-calcular_dv("3526031122233300018155001000001201100001201")   # 2
+validar("35260311222333000181550010000012011000012012")  # True
+calcular_dv("3526031122233300018155001000001201100001201")  # 2
 formatar("35260311222333000181550010000012011000012012")
 # '3526 0311 2223 3300 0181 5500 1000 0012 0110 0001 2012'
 
@@ -227,10 +236,10 @@ nota = ler_nota("inbox/NF-1202.xml")
 nota.chave, nota.emitente_nome, nota.valor_total, nota.autorizada
 # ('3526031122...', 'Empresa Exemplo Ltda', Decimal('89.90'), False)
 
-plano = planejar("inbox", "organized")      # reads only, returns a Plano
+plano = planejar("inbox", "organized")  # reads only, returns a Plano
 for mov in plano.movimentos:
     print(mov.origem, "->", mov.destino)
-resultado = aplicar(plano, copiar=True)     # copies; never overwrites
+resultado = aplicar(plano, copiar=True)  # copies; never overwrites
 
 r = conciliar("inbox", "expected-keys.txt")
 r.faltando, r.sobrando, r.duplicadas, r.invalidas, r.ok
