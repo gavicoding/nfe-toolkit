@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe"><infNFe versao="4.00" Id="NFe35260311222333000181550010000012021000012028"><ide><cUF>35</cUF><mod>55</mod><serie>1</serie><nNF>1202</nNF><dhEmi>2026-03-15T16:40:00-03:00</dhEmi></ide><emit><CNPJ>11222333000181</CNPJ><xNome>Empresa Exemplo Ltda</xNome></emit><dest><CPF>12345678909</CPF><xNome>Cliente Exemplo</xNome></dest><total><ICMSTot><vNF>89.90</vNF></ICMSTot></total></infNFe></NFe>
